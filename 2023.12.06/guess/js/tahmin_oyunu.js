@@ -24,11 +24,13 @@ window.onload = function () {
       document.getElementById("Ipucu").innerHTML =
         "Lütfen daha <strong>küçük</strong> bir sayı girin";
       document.getElementById("Ipucu").style.display = "block";
+      document.getElementById("Ipucu").className= "alert alert-warning"
       remainingGuess--;
     } else if (guessedNum < correctNum) {
       document.getElementById("Ipucu").innerHTML =
         "Lütfen daha <strong>büyük</strong> bir sayı girin";
       document.getElementById("Ipucu").style.display = "block";
+      document.getElementById("Ipucu").className= "alert alert-warning"
       remainingGuess--;
     } else {
       document.getElementById("Ipucu").className = "alert alert-success";
@@ -46,6 +48,9 @@ window.onload = function () {
       correctNumber = GenerateRandomNumber(min, max);
     }
     if (remainingGuess == 0) {
+      document.getElementById("Ipucu").className = "alert alert-danger";
+      document.getElementById("Ipucu").innerHTML =
+        "<strong>Game over!</strong>";
       level = 1;
       remainingGuess = 5;
       max = level * 10;
